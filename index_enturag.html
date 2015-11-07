@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="css_enturag.css" rel="stylesheet">
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>-->
+    <script src="jquery-1.10.2.js"></script>
+    <script src="angular.js"></script>
+    <script src="main.js"></script>
+    <script src="appslider.js"></script>
+</head>
+<body>
+    <div ng-app="slider" ng-controller="sliderCtrl">
+        <div id="maincontainer">
+            <div id="manipulate">
+                <div id="moviecontainer">
+                    <div style="overflow: hidden; height: 380px; width: 628px;">
+                        <img id="mainimg" ng-repeat="item in data" src="{{item.path}}" ng-click="secondslider()" second-slider>
+                    </div>
+                </div>
+            </div>
+            <span id="levo"><</span>
+            <span id="pravo">></span>
+        </div>
+
+        <div id="secsl">
+            <div id="secslleft" style="border-color:green">
+
+            </div>
+            <div id="secslmidle" style="border-color:yellow">
+
+            </div>
+            <div id="secslright" style="border-color:blue">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
