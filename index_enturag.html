@@ -2,40 +2,128 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <link href="css_enturag.css" rel="stylesheet">
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>-->
-    <script src="jquery-1.10.2.js"></script>
-    <script src="angular.js"></script>
-    <script src="main.js"></script>
-    <script src="appslider.js"></script>
+    <title>"Антураж" художественная мастерская | Художественная мастерская</title>
+    <link href="css/css_enturag.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/appslider.js"></script>
 </head>
-<body>
-    <div ng-app="slider" ng-controller="sliderCtrl">
-        <div id="maincontainer">
-            <div id="manipulate">
-                <div id="moviecontainer">
-                    <div style="overflow: hidden; height: 380px; width: 628px;">
-                        <img id="mainimg" ng-repeat="item in data" src="{{item.path}}" ng-click="secondslider()" second-slider>
+<body ng-app="slider" ng-controller="sliderCtrl">
+    <div id="site-container">
+        <div id="container1">
+            <img id="logo" src="images/logotype.png" />
+                <!--<h1 class="header">Художественная мастерская</h1>-->
+            <div id="container2">
+                <!--<nav>-->
+                    <ul>
+                        <li id="main">
+                            <a class="pointmenu pointmenu2" href="">Главная</a>
+                        </li>
+                        <li>
+                            <a class="pointmenu" href="">Мастерская</a>
+                        </li>
+                        <li>
+                            <a class="pointmenu" href="">О нас</a>
+                        </li>
+                        <li id="contacts">
+                            <a class="pointmenu" href="">Контакты</a>
+                        </li>
+                    </ul>
+                <!--</nav>-->
+                <h1 class="header">Художественная мастерская</h1>
+                <div id="mainpage">
+                    
+                    <div id="cat"></div>
+                    <div class="mainimages">
+                        <img class="mainimges" id="one" src="images/main/ikoni.png" />
+                        <p class="mainimagedisc">Иконы</p>
+                    </div>
+                    <div class="mainimages">
+                        <img class="mainimges" id="two" src="images/main/portret.png" />
+                        <p class="mainimagedisc">Живопись</p>
+                    </div>
+                    <div class="mainimages">
+                        <img class="mainimges" id="three" src="images/main/modulnie-kartini.png" />
+                        <p class="mainimagedisc">Модульные картины</p>
+                    </div>
+                    <div class="mainimages">
+                        <img class="mainimges" id="four" src="images/main/hodojistven-oforml.png" />
+                        <p class="mainimagedisc mainimagedisc2">Художественное оформление</p>
                     </div>
                 </div>
+                <div id="promo">
+                    <p>Данный сайт являет переработанной копией реального сайта расположенного по <a href="http://www.enturag.com">www.enturag.com</a></p>
+                    <p>Главные отличия данного сайта от оригинала:</p>
+                    <p>- построен по принципу SPA;</p>
+                    <p>- использовался AngularJS и jQuery для реализации слайдеров;</p>
+                    <p>- применена адаптивная верстка.</p>
+                    <p>Работа над этим сайтом продолжается.</p>
+                </div>
+                <div id="footer">
+                    <a href="facebook.com" class="socialnet"><i class="_mi fa fa-facebook"></i></a>
+                    <a href="vk.com" class="socialnet"><i class="_mi fa fa-vimeo" ></i></a>
+                </div>
+                <!--maincontainer - container of first slider-->
+                <div id="maincontainer">
+                    <div id="manipulate">
+                        <div id="moviecontainer">
+                            <div id="partone">
+                                <img number="{{item.numberim}}" title="{{item.description}}" class="mainimg" ng-repeat="item in data1 | filter : selectItems track by $index " ng-src="{{item.path}}" ng-click="secondslider($index)" second-slider>
+                            </div>
+                            <div id="parttwo">
+                                <img number="{{item.numberim}}" title="{{item.description}}" class="mainimg" ng-repeat="item in data2 | filter : selectItems track by $index" ng-src="{{item.path}}" ng-click="secondslider()" second-slider>
+                            </div>
+                        </div>
+                    </div>
+                    <a id="levo"></a>
+                    <a id="pravo"></a>
+                </div>
+                <div id="contact">
+                    <p><strong>Тел.:</strong> +38 (0472) 569-001;</p>
+                    <p><strong>Моб:</strong> +38 (094) 98-50-001  +38 (096) 142-08-88 (Инна Пустовит)</p>
+                    <p><strong>E-mail:</strong> enturag@ukr.net</p>
+                    <p>Информацию о том, как мы работаем, условия доставки и оплаты читайте в рубрике «О нас».</p>
+                </div>
             </div>
-            <span id="levo"><</span>
-            <span id="pravo">></span>
-        </div>
-
-        <div id="secsl">
-            <div id="secslleft" style="border-color:green">
-
             </div>
-            <div id="secslmidle" style="border-color:yellow">
-
+            <div id="shadow">
             </div>
-            <div id="secslright" style="border-color:blue">
-
+            <div id="secsl">
+                <!--secsl - second slider-->
+                <div id="secslleft">
+                    <div id="movesecslleft" style="position: relative;">
+                        <img id="lefteimg" ng-repeat="item in data" ng-src="{{item.path2}}">
+                        <div class="description" ng-repeat="item1 in data">
+                            <p>Описание</p>
+                            <p style="font-size:10px">{{item1.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="secslmidle">
+                    <div id="movesecslmidle">
+                        <img id="midleimg" ng-repeat="item in data" ng-src="{{item.path2}}">
+                        <div class="descriptionmidle" ng-repeat="item1 in data">
+                            <p>Описание</p>
+                            <p style="font-size:14px">{{item1.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="secslright">
+                    <div id="movesecslright" style="position: relative;">
+                        <img id="righteimg" ng-repeat="item in data" ng-src="{{item.path2}}">
+                        <div class="description" ng-repeat="item1 in data">
+                            <p>Описание</p>
+                            <p style="font-size:10px">{{item1.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                <a id="secsllevo"></a>
+                <a id="secslpravo"></a>
+                <a id="escape"></a>
+                <!--<a id="escape" ng-click="secslclose()"></a>-->
             </div>
-        </div>
     </div>
 </body>
 </html>
